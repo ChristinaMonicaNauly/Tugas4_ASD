@@ -12,61 +12,59 @@ import java.util.Scanner;
  * @author LENOVO
  */
 public class Nomor7 {
-    public static void insertionSort(int[] data) {
-        for (int i = 1; i < data.length; i++){
-            int key = data[i];
-            int j = i - 1;
-            while ((j >= 0) && (data[j] > key)) {
-                
-                
-                data[j + 1] = data[j];
-                j--;
-            }
-            data[j + 1] = key;
-        }
+     public  static  void tampil(int []data){
+         
+     for(int i=0; i<data.length; i++){
+                System.out.print(data[i]+ " ");
+     }
+     System.out.println();
+     }
+     
+    public  static  void Sorting(int []A){
+         for(int i=1; i<A.length; i++){
+          int key = A[i];
+          int j = i-1;
+          while ((j>= 0) &&  (A[j]>key)){
+          A[j +1] = A[j];
+          j--;
+          }
+          A[j + 1]= key;
+          }
         
     }
-    public static void tampil(int a[]) {
-        for(int i = 0; i < a.length; i++){
-            System.out.print(a[i] + " ");
-        } 
+    public static void Searching(int A[]){
+        int key =13 ;
+        System.out.println("Isi data adalah : ");
+        for (int i=0; i<A.length; i++){
+            System.out.print(A[i] + " ");
+        }
         System.out.println();
+        
+        for (int i =0; i<A.length; i++){
+            if(key == A[i]){
+               System.out.print("Data " + key + " Berada Di Indeks Ke : " + i);
+               break;
+            }
+        }
+        System.out.println("\n");
     }
+   
+    
     
     public static void main(String[] args) {
-        int data[] = {25, 7, 9, 13, 3};
-               int dicari;
-        boolean ketemu =false;
-        Scanner scan = new Scanner(System.in); 
-        System.out.println("isi data adalah: ");
-        tampil(data);
-        
-        System.out.println("Isi data setelah di sorting :");
-        insertionSort(data);
-        tampil(data);
-        
-        System.out.println("");
-        
-        System.out.print("Masukan data yang dicari : ");
-        dicari = scan.nextInt();
-    
-        for (int i = 0; i < data.length; i++){
-        if (dicari == data[i]){
-            ketemu = true;
-            System.out.print("Data " + dicari +" berada pada index ke - " + i);
-        }
-        
-            
-    }
-    System.out.println();
-    
-    if(ketemu == true){
-        System.out.println("data ditemukan");
-    }else{
-        System.out.println("data tidak ditemukan");
-              
-                }
-    System.out.println("Christina Monica Nauly(20090021)");
-    }
-    
-    }
+    System.out.println("Program Pengurutan InsertionSort dan Sequential Searching");
+          int data[] = {25,7,9,13,3};
+        System.out.println("Data Sebelum Diurutkan : ");
+           Nomor7.tampil(data);
+           Nomor7.Sorting(data);
+         System.out.println("Data Sesudah Diurutkan : ");
+           Nomor7.tampil(data);
+           Nomor7.Searching(data);
+           System.out.println();
+            System.out.print("Christina Monica Nauly(20090037)");
+           
+    }    
+ 
+   
+
+}
